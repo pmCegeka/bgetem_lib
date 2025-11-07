@@ -1,0 +1,22 @@
+/* Button Component Styles */
+
+.button-element {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #004994;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.button-element:hover {
+  background: #003366;
+  transform: translateY(-1px);
+}
+
+.button-element:active {
+  transform: translateY(0);
+}

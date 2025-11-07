@@ -1,0 +1,89 @@
+/* CardGrid Component Styles */
+
+.serviceportal-aktuelle-meldung-container {
+  margin: 0 auto;
+  padding: 1.25rem;
+  max-width: 80rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.serviceportal-aktuelle-meldung-header {
+  width: 100%;
+  background: #004994;
+  color: #fff;
+  font-family: 'Segoe UI';
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.serviceportal-aktuelle-meldung-cards-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.serviceportal-aktuelle-meldung-cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.serviceportal-aktuelle-meldung-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  justify-content: flex-start;
+}
+
+.serviceportal-aktuelle-meldung-card {
+  flex: 1 1 20rem;
+  min-width: 16rem;
+  max-width: 22rem;
+  background: #ededed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.serviceportal-aktuelle-meldung-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.serviceportal-aktuelle-meldung-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #dadada;
+}
+
+.serviceportal-aktuelle-meldung-card-content {
+  padding-top: 1rem;
+  flex: 1;
+}
+
+.serviceportal-aktuelle-meldung-card-content h3 {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: #004994;
+  margin: 0 0 0.3rem;
+  min-height: 2.3rem;
+  font-weight: 600;
+}
+
+.serviceportal-aktuelle-meldung-card-content p {
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: #000;
+  line-height: 1.4;
+  font-weight: 550;
+}
