@@ -3,54 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aktuelle Meldungen</title>
-    <link rel="stylesheet" href="components/CardGrid.css" />
+    <title>BGETEM Component Library</title>
+    <link rel="stylesheet" href="./components/CardGrid.css" />
+    <link rel="stylesheet" href="./components/Button.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+  <header class="header">
+      <img src="assets/bg-etem.svg" alt="BG ETEM Logo" class="logo" />
+      <h1 class="title">BGETEM Component Library</h1>
+  </header>
 
-    <script type="module">
+  <main class="main">
+
+      <h3 class="toggle-header">
+          Cards <span class="chevron">▼</span>
+      </h3>
+      <section id="app-card" class="content-area"></section>
+
+      <h3 class="toggle-header">
+          Button <span class="chevron">▼</span>
+      </h3>
+      <section id="app-button" class="content-area"></section>
+
+
+  </main>
+
+
+  <footer class="footer">
+      <p>© 2025 BG ETEM – Alle Rechte vorbehalten</p>
+  </footer>
+
+  <script type="module">
       import { CardGrid } from './components/CardGrid.js';
       import { Button } from './components/Button.js';
 
       const cardsData = [
-        {
-          title: 'Bitte vergeben Sie ein neues Passwort',
-          text: `Wichtiger Hinweis für Nutzerinnen und Nutzer von "Meine BG ETEM":
+          {
+              title: 'Bitte vergeben Sie ein neues Passwort',
+              text: `Wichtiger Hinweis für Nutzerinnen und Nutzer von "Meine BG ETEM":
           Die Passwortrichtlinie hat sich geändert. Aus Sicherheitsgründen ist
           eine einmalige Passwortänderung erforderlich.`,
-          img: 'https://via.placeholder.com/300x140',
-        },
-        {
-          title: 'Warnung vor Betrugsversuch',
-          text: `E-Mails zu angeblichem digitalen Präventionsmodul stammen nicht
+              img: 'https://via.placeholder.com/300x140',
+          },
+          {
+              title: 'Warnung vor Betrugsversuch',
+              text: `E-Mails zu angeblichem digitalen Präventionsmodul stammen nicht
           von der DGUV oder der BG ETEM.`,
-          img: 'https://via.placeholder.com/300x140',
-        },
-        {
-          title: 'Hohes Anfrageaufkommen',
-          text: `Derzeit kommt es aufgrund hoher Anfragen zu Verzögerungen bei der
+              img: 'https://via.placeholder.com/300x140',
+          },
+          {
+              title: 'Hohes Anfrageaufkommen',
+              text: `Derzeit kommt es aufgrund hoher Anfragen zu Verzögerungen bei der
           Bearbeitung. Wir bitten um Verständnis.`,
-          img: 'https://via.placeholder.com/300x140',
-        },
-        {
-          title: 'Über uns',
-          text: `Die BG ETEM versendet aktuell Beitragsbescheide für das Jahr 2024.
+              img: 'https://via.placeholder.com/300x140',
+          },
+          {
+              title: 'Über uns',
+              text: `Die BG ETEM versendet aktuell Beitragsbescheide für das Jahr 2024.
           Leider kommt es aufgrund eines hohen Anfrageaufkommens zu Verzögerungen.`,
-          img: 'https://via.placeholder.com/300x140',
-        },
+              img: 'https://via.placeholder.com/300x140',
+          },
       ];
 
       const cardGrid = new CardGrid({
-        title: 'Aktuelle Meldungen',
-        cards: cardsData,
-        containerSelector: '#app',
+          title: 'Aktuelle Meldungen',
+          cards: cardsData,
+          containerSelector: '#app-card',
       });
 
       cardGrid.render();
 
-      const button = new Button({ containerSelector: '#app' });
+      const button = new Button({ containerSelector: '#app-button', text: 'zurück' });
       button.render();
-    </script>
+
+
+
+
+      document.querySelectorAll('.toggle-header').forEach(header => {
+          header.addEventListener('click', () => {
+              const section = header.nextElementSibling;
+              const isHidden = section.style.display === 'none';
+
+              section.style.display = isHidden ? 'block' : 'none';
+              header.classList.toggle('collapsed', !isHidden);
+          });
+      });
+
+      // Optional: start collapsed
+      document.querySelectorAll('.content-area').forEach(section => {
+          section.style.display = 'none';
+      });
+      document.querySelectorAll('.toggle-header').forEach(header => {
+          header.classList.add('collapsed');
+      });
+
+
+  </script>
   </body>
+
 </html>

@@ -1,0 +1,123 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f8fa;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    height: 48px;
+    width: auto;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #004994; /* BG ETEM blue */
+}
+
+/* Main content */
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-area {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin: 2rem;
+    transition: box-shadow 0.2s ease-in-out;
+
+}
+
+.content-area:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.footer {
+    background: #004994;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer p {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .content-area {
+        padding: 1rem;
+    }
+}
+
+
+.toggle-header {
+    min-width: 12rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.toggle-header.collapsed {
+    background-color: #e0e0e0;
+    color: #666;
+    margin: 2rem;
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.toggle-header.collapsed .chevron {
+    transform: rotate(-90deg);
+}
