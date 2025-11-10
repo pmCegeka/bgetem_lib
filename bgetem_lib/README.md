@@ -18,36 +18,36 @@ A flexible, reusable card grid component library for displaying content in a res
 ```html
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <link rel="stylesheet" href="components/CardGrid.css" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="your-app.js"></script>
-  </body>
+<head>
+    <link rel="stylesheet" href="components/CardGrid/CardGrid.css"/>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="your-app.js"></script>
+</body>
 </html>
 ```
 
 ### JavaScript
 
 ```javascript
-import { CardGrid } from './components/CardGrid.js';
+import {CardGrid} from './CardGrid.js';
 
 const cards = [
-  {
-    title: 'Card Title',
-    text: 'Card description text',
-    img: 'https://example.com/image.jpg'
-  }
+    {
+        title: 'Card Title',
+        text: 'Card description text',
+        img: 'https://example.com/image.jpg'
+    }
 ];
 
 const cardGrid = new CardGrid({
-  title: 'My Cards',
-  cards: cards,
-  containerSelector: '#app',
-  onCardClick: (card, index) => {
-    console.log('Card clicked:', card);
-  }
+    title: 'My Cards',
+    cards: cards,
+    containerSelector: '#app',
+    onCardClick: (card, index) => {
+        console.log('Card clicked:', card);
+    }
 });
 
 cardGrid.render();
@@ -112,15 +112,15 @@ cardGrid.removeCard(0); // Removes first card
 ### Basic Usage
 
 ```javascript
-import { CardGrid } from './components/CardGrid.js';
+import {CardGrid} from './CardGrid.js';
 
 const grid = new CardGrid({
-  title: 'News',
-  cards: [
-    { title: 'Item 1', text: 'Text 1', img: 'img1.jpg' },
-    { title: 'Item 2', text: 'Text 2', img: 'img2.jpg' }
-  ],
-  containerSelector: '#app'
+    title: 'News',
+    cards: [
+        {title: 'Item 1', text: 'Text 1', img: 'img1.jpg'},
+        {title: 'Item 2', text: 'Text 2', img: 'img2.jpg'}
+    ],
+    containerSelector: '#app'
 });
 
 grid.render();
