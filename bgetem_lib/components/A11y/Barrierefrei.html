@@ -1,0 +1,145 @@
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./Barrierefrei.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<nav class="menu">
+    <ul>
+        <li><a href="../../">Zurück</a></li>
+    </ul>
+</nav>
+
+<section class="accessibility-info">
+    <h1>Barrierefreiheit – Richtlinien und Tests</h1>
+
+    <article>
+        <h2>Navigation</h2>
+        <ul>
+            <li>Mindestens zwei Zugangswege vorhanden → <strong>2.4.5 Multiple Ways (AA)</strong></li>
+            <li>Strukturierte Überschriften und Tab-Navigation → <strong>2.4.6 Headings and Labels (AA)</strong> &amp; allgemeine Keyboard-Navigation (<strong>2.1.1</strong>)</li>
+        </ul>
+
+        <h3>Best Practice (kein Muss für AA)</h3>
+        <ul>
+            <li>Konsistente Benennung von Navigationselementen</li>
+            <li>Konsistente Positionierung von Hilfemechanismen</li>
+            <li>Konsistente UX-Navigation und Interaktionsmuster</li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Steuerung und Eingabe</h2>
+        <ul>
+            <li>Eingeblendete Elemente müssen bedienbar sein → <strong>1.4.13</strong></li>
+            <li>Keine unerwarteten Kontextänderungen → <strong>3.2.1</strong> &amp; <strong>3.2.2</strong></li>
+            <li>Bedienung ohne Maus → <strong>2.1.1 Keyboard</strong></li>
+            <li>Sinnvolle Reihenfolge der Tastaturbedienung → <strong>2.4.3 Focus Order (AA)</strong></li>
+            <li>Überspringbare Bereiche → <strong>2.4.1 Bypass Blocks (AA)</strong></li>
+        </ul>
+
+        <h3>Best Practice</h3>
+        <ul>
+            <li>Tastaturkurzbefehle abschaltbar oder anpassbar → <strong>2.1.4 (AAA)</strong></li>
+            <li>Disabled Buttons vermeiden oder sinnvoll gestalten</li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Syntax und Struktur</h2>
+        <ul>
+            <li>Statusmeldungen programmatisch verfügbar → <strong>4.1.3 (AA)</strong></li>
+            <li>Richtige Strukturierung mit <code>h1–h6</code>, Listen, Zitaten → <strong>1.3.1</strong></li>
+            <li>Sinnvolle Vorlesereihenfolge → <strong>1.3.2</strong></li>
+            <li>Sinnvolle und unterscheidbare Page-Titel → <strong>2.4.2</strong></li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Formulare</h2>
+        <ul>
+            <li>Eingabezweck klar → <strong>1.3.5</strong></li>
+            <li>Labels vorhanden und korrekt verbunden → <strong>1.3.1</strong> + <strong>2.4.6</strong></li>
+            <li>Fehlererkennung und -meldung → <strong>3.3.1</strong> &amp; <strong>3.3.3</strong></li>
+            <li>Sichtbare und sinnvolle Beschriftungen → <strong>2.4.6</strong> &amp; <strong>3.3.2</strong></li>
+            <li>Hilfe bei Fehlern → <strong>3.3.3</strong></li>
+            <li>Möglichkeit zur Überprüfung und Korrektur → <strong>3.3.4</strong></li>
+        </ul>
+
+        <h3>Best Practice</h3>
+        <ul>
+            <li>Vermeidung redundanter Eingaben</li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Erweiterte Steuerung</h2>
+        <ul>
+            <li>Alternative für visuelle CAPTCHAs → <strong>1.1.1</strong></li>
+            <li>Ziehbewegungen alternativ → <strong>2.5.7</strong></li>
+            <li>Zugängliche Authentifizierung ohne kognitive Tests → <strong>2.2.6</strong></li>
+            <li>Alternative für Bewegungsaktivierung → <strong>2.5.4</strong></li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Gestaltung und Farbe</h2>
+        <ul>
+            <li>Kontraste Grafiken/Bedienelemente (mind. 3:1) → <strong>1.4.11</strong></li>
+            <li>Textkontrast 4.5:1 / 3:1 → <strong>1.4.3</strong></li>
+            <li>Website ohne Farben nutzbar → <strong>1.4.1</strong></li>
+            <li>Keine reine sensorische Codierung → <strong>1.3.3</strong></li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Details zu den Stufen der Barrierefreiheitstests</h2>
+
+        <h3>1. Automatische Tests</h3>
+        <p>Automatische Tests decken viele WCAG-Kriterien ab:</p>
+        <ul>
+            <li>Alt-Attribute</li>
+            <li>Farbkontraste</li>
+            <li>HTML-Struktur</li>
+            <li>ARIA-Attribute</li>
+            <li>Tastaturbedienung</li>
+        </ul>
+        <p><strong>Tools:</strong> WAVE, Lighthouse</p>
+
+        <h3>2. UX-Test (Manuelle Überprüfung)</h3>
+        <ul>
+            <li>Logische Navigation</li>
+            <li>Verständlichkeit von Inhalten</li>
+            <li>Fokus-Indikatoren sichtbar</li>
+            <li>Fehlerbehandlung hilfreich</li>
+            <li>Konsistenz der Bedienung</li>
+        </ul>
+
+        <h3>3. 200 % / 400 % Zoom</h3>
+        <ul>
+            <li>Lesbarkeit ohne horizontales Scrollen</li>
+            <li>Funktionalität bleibt erhalten</li>
+            <li>Test in verschiedenen Browsern</li>
+        </ul>
+
+        <h3>4. Kontrastmodus (High Contrast Mode)</h3>
+        <ul>
+            <li>Textkontrast: mind. 4.5:1</li>
+            <li>Nicht-Text-Kontrast: mind. 3:1</li>
+            <li>Keine reine Farbkommunikation</li>
+        </ul>
+
+        <h3>5. Screen Reader</h3>
+        <p>Screen Reader wie NVDA, VoiceOver, JAWS oder EYE ABLE prüfen Lesbarkeit, Struktur und Fokusmanagement.</p>
+    </article>
+
+    <article>
+        <h2>Ergänzungen für den Testprozess</h2>
+        <ul>
+            <li>Testumgebung: verschiedene Browser &amp; Betriebssysteme</li>
+            <li>Dokumentation aller Tests und Korrekturen</li>
+            <li>Regelmäßige Wiederholungen</li>
+            <li>Schulung der Beteiligten</li>
+        </ul>
+    </article>
+</section>
