@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BGETEM Component Library</title>
+    <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./components/CardGrid/CardGrid.css" />
     <link rel="stylesheet" href="./components/Button/Button.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./components/Contact-card/Contact-card.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/Cegeka_Logo_Color_Icon_RGB.png">
   </head>
   <body>
   <header class="header">
@@ -34,6 +36,11 @@
       </h3>
       <section id="app-button" class="content-area"></section>
 
+      <h3 class="toggle-header">
+          Contact <span class="chevron">▼</span>
+      </h3>
+      <section id="app-contact" class="content-area"></section>
+
 
   </main>
 
@@ -43,9 +50,11 @@
   </footer>
 
   <script type="module">
-      import { CardGrid } from './components/CardGrid/CardGrid.js';
-      import { Button } from './components/Button/Button.js';
 
+
+      // ~~~~~~ Card Grid
+
+      import { CardGrid } from './components/CardGrid/CardGrid.js';
       const cardsData = [
           {
               title: 'Bitte vergeben Sie ein neues Passwort',
@@ -79,15 +88,33 @@
           cards: cardsData,
           containerSelector: '#app-card',
       });
-
       cardGrid.render();
 
+
+
+      // ~~~~~~ Button
+
+      import { Button } from './components/Button/Button.js';
       const button = new Button({ containerSelector: '#app-button', text: 'zurück' });
       button.render();
 
 
 
+      // ~~~~~~ Contact Cards
+      import { ContactCard } from './components/Contact-card/Contact-card.js';
+      const contactcard = new ContactCard({
+          title: "Postfach",
+          description: "Sicherer Austausch von Nachrichten mit Ihrem UV-Träger",
+          link1: "Posteingang",
+          link2: "Postausgang"
+      });
+      document.getElementById("app-contact").appendChild(contactcard.render());
 
+
+
+
+
+      // ~~~~~~ Main Page Methoden
       document.querySelectorAll('.toggle-header').forEach(header => {
           header.addEventListener('click', () => {
               const section = header.nextElementSibling;
@@ -105,6 +132,9 @@
       document.querySelectorAll('.toggle-header').forEach(header => {
           header.classList.add('collapsed');
       });
+
+
+
 
 
   </script>
