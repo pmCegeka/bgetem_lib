@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./components/CardGrid/CardGrid.css" />
     <link rel="stylesheet" href="./components/Button/Button.css" />
     <link rel="stylesheet" href="./components/Contact-card/Contact-card.css" />
+    <link rel="stylesheet" href="./components/Link/Link.css" />
     <link rel="icon" type="image/x-icon" href="./assets/Cegeka_Logo_Color_Icon_RGB.png">
   </head>
   <body>
@@ -27,7 +28,7 @@
   <main class="main">
 
       <h3 class="toggle-header">
-          Cards <span class="chevron">▼</span>
+          Cards-Grid <span class="chevron">▼</span>
       </h3>
       <section id="app-card" class="content-area"></section>
 
@@ -40,6 +41,12 @@
           Contact <span class="chevron">▼</span>
       </h3>
       <section id="app-contact" class="content-area"></section>
+
+      <h3 class="toggle-header">
+          Link <span class="chevron">▼</span>
+      </h3>
+      <section id="app-link1" class="content-area"></section>
+
 
 
   </main>
@@ -109,6 +116,30 @@
           link2: "Postausgang"
       });
       document.getElementById("app-contact").appendChild(contactcard.render());
+
+
+      // ~~~~~~ Link
+
+
+      import { LinkList } from './components/Link/Link.js';
+
+      const links = [
+          {
+              label: 'Linklist medium',
+              href: 'https://example.com/docs',
+              target: '_blank',
+              showIcon: true, // 👈 icon visible
+          },
+          {
+              label: 'Inline Link medium',
+              href: 'https://example.com/about',
+              target: '_blank',
+              showIcon: false, // 👈 no icon
+          }
+      ];
+
+      const linkList = new LinkList(links);
+      document.getElementById("app-link1").appendChild(linkList.render());
 
 
 

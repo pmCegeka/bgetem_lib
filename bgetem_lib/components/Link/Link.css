@@ -1,0 +1,71 @@
+:root {
+    --link-color: #1a56b8;
+    --focus-color: #ffbf47;
+    --underline-thickness: 3px;
+    --gap: 0.4rem;
+}
+
+.link-label {
+    position: relative;
+    display: inline-block;
+}
+
+.link-label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: blue;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.link-list:hover .link-label::after {
+    transform: scaleX(1);
+}
+
+.link-list {
+    margin: 1rem;
+    text-decoration: none;
+}
+
+
+.link-icon {
+    flex: 0 0 auto;
+    width: 0.9em;
+    height: 0.9em;
+    transform: translateY(1px);
+}
+
+.link-label {
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.bgetem-link_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.link-list:hover,
+.link-list:active {
+    filter: brightness(0.95);
+    outline: none;
+}
+
+.link-list:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .link-list {
+        transition: none;
+    }
+}

@@ -39,7 +39,7 @@
 
 .contact-card-actions {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
     font-weight: 600;
 }
 
